@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783697222528b854a93a5c44eeccd089, type: 3}
+  m_Name: WaveData_08_TankParade
+  m_EditorClassIdentifier: Assembly-CSharp::PastaDefence.Enemies.WaveData
+  waveName: Tank Parade
+  waveQuip: They're sending the big noodles now!
+  waveNumber: 8
+  enemyGroups:
+  - enemyData: {fileID: 11400000, guid: 50db14021a2af46459a0d7be7fd534c6, type: 2}
+    count: 5
+    spawnInterval: 1.5
+  - enemyData: {fileID: 11400000, guid: 808e816e61f0c214fbab753adba4e829, type: 2}
+    count: 10
+    spawnInterval: 0.4
+  bonusDough: 40

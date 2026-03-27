@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9d76d61974e7143bfbfaa7616c05ce, type: 3}
+  m_Name: TowerData_PepperGrinder
+  m_EditorClassIdentifier: Assembly-CSharp::PastaDefence.Towers.TowerData
+  towerName: Pepper Grinder
+  punName: Sneeze Louise
+  towerType: 1
+  icon: {fileID: 0}
+  prefab: {fileID: 223867876011525914, guid: 95f8ac8564a57b64ba20f3bdd31f48e7, type: 3}
+  damage: 8
+  attackSpeed: 1.2
+  range: 3.5
+  cost: 50
+  damageType: 3
+  defaultTargeting: 0
+  canTargetFlying: 0
+  isAreaOfEffect: 1
+  aoeRadius: 1.5
+  slowAmount: 0.15
+  slowDuration: 1
+  stunChance: 0
+  stunDuration: 0
+  armorReduction: 2
+  dotDamage: 3
+  dotDuration: 2
+  knockbackForce: 0
+  buffDamagePercent: 0
+  buffSpeedPercent: 0
+  buffRange: 0
+  doughPerWave: 0
+  upgradePath:
+  - upgradeName: Freshly Ground
+    punName: Freshly Ground
+    description: +DoT damage
+    cost: 35
+    icon: {fileID: 0}
+    damageBonus: 0
+    attackSpeedBonus: 0
+    rangeBonus: 0
+    aoeRadiusBonus: 0
+    slowAmountBonus: 0
+    slowDurationBonus: 0
+    stunChanceBonus: 0
+    dotDamageBonus: 3
+    knockbackForceBonus: 0
+    buffDamagePercentBonus: 0
+    doughPerWaveBonus: 0
+  - upgradeName: Extra Coarse
+    punName: Extra Coarse
+    description: +Range, stronger armor shred
+    cost: 70
+    icon: {fileID: 0}
+    damageBonus: 4
+    attackSpeedBonus: 0
+    rangeBonus: 0.8
+    aoeRadiusBonus: 0
+    slowAmountBonus: 0
+    slowDurationBonus: 0
+    stunChanceBonus: 0
+    dotDamageBonus: 0
+    knockbackForceBonus: 0
+    buffDamagePercentBonus: 0
+    doughPerWaveBonus: 0
+  - upgradeName: Ghost Pepper
+    punName: Ghost Pepper
+    description: Invisible DoT cloud, ignores shields
+    cost: 140
+    icon: {fileID: 0}
+    damageBonus: 5
+    attackSpeedBonus: 0
+    rangeBonus: 0
+    aoeRadiusBonus: 0.5
+    slowAmountBonus: 0
+    slowDurationBonus: 0
+    stunChanceBonus: 0
+    dotDamageBonus: 8
+    knockbackForceBonus: 0
+    buffDamagePercentBonus: 0
+    doughPerWaveBonus: 0
+  flavorText: Achoo said it couldn't be done?
+  placementQuip: Bless you. In advance.
+  sellQuip: The pepper has left the grinder.

@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5054f09b96206240b12f05f6a70032f, type: 3}
+  m_Name: QuipDatabase_Main
+  m_EditorClassIdentifier: Assembly-CSharp::PastaDefence.Humor.QuipDatabase
+  enemyKillQuips:
+  - Pasta la vista, baby.
+  - That's a-more damage than they expected!
+  - You got served!
+  - Order up! One defeated pasta!
+  - Sent to the sauce graveyard.
+  - Al gone-te!
+  - That noodle got nooked.
+  - Another one bites the crust.
+  - Reduced to sauce.
+  - Fork-got to dodge!
+  - That was im-pasta-ble to survive!
+  - Looks like they pasta-way.
+  - Well, that was un-fork-tunate.
+  - Noodled into oblivion.
+  - Carb-onized!
+  waveStartQuips:
+  - Here they come! Al dente and dangerous!
+  - Incoming! Look alive, Chef!
+  - More pasta? This kitchen never closes!
+  - They're sending noodles! The audacity!
+  - "Brace yourself \u2014 carbs are coming."
+  - Wave incoming! Hope you're not gluten intolerant!
+  - Lock and load the pepper grinder!
+  - "Ready your utensils \u2014 it's showtime!"
+  - The pasta uprising continues!
+  - Here comes the next course!
+  waveCompleteQuips:
+  - Another course completed. What's next on the menu?
+  - Clean plate club!
+  - That wave was a piece of cake. Wait, wrong food game.
+  - Served and handled!
+  - 'Kitchen: 1. Pasta: 0.'
+  - Wave cleared! Time to upgrade your mise en place.
+  - Not bad, Chef. Not bad at all.
+  - That was grate! Get it? ...I'll see myself out.
+  - Dinner is NOT served. To them.
+  - Wave demolished! You're on a roll. A rolling pin, specifically.
+  bossSpawnQuips:
+  - Oh pasta... it's a big one!
+  - BOSS INCOMING! This one's got layers!
+  - That is one THICC noodle.
+  - The main course has arrived!
+  - This isn't your average Tuesday night dinner...
+  towerPlacedQuips:
+  - Utensil deployed! Let 'em cook!
+  - Placed and ready to pasta-pound!
+  - Another tool in the arsenal. Literally.
+  - "Strategic kitchen equipment placement \u2014 very professional."
+  - That's using your noodle!
+  towerSoldQuips:
+  - Back in the drawer you go.
+  - Don't worry, you'll get your chance to shine.
+  - Return to sender. I mean drawer.
+  - Sometimes you gotta let go. *sniff*
+  - Sold! No refunds on emotional attachment.
+  gameOverQuips:
+  - You've been served.
+  - The pasta has won this round. Fork.
+  - Game over, man! Game over! ...Want some pasta?
+  - Your kitchen has been overrun by carbs.
+  - Defeat tastes like cold spaghetti.
+  - The noodles prevail. This time.
+  - You tried your best. Your best wasn't al dente enough.
+  - 'Kitchen: closed. Permanently.'
+  victoryQuips:
+  - Nailed it! That was grate!
+  - Chef's kiss. Literally.
+  - Victory! The pasta menace has been contained!
+  - You did it! That was im-pasta-bly good!
+  - 'Kitchen: defended. Pasta: defeated. Chef: exhausted.'
+  - The dinner plate survives another day!
+  - That was one spicy performance!
+  - Gordon would approve. Probably. Maybe.
+  chefPlacedQuips:
+  - Chef's in the house! Mise en place, baby.
+  - Let's get this bread... I mean pasta.
+  - Time to cook up some defense!
+  - Alright noodles, who wants to get served?
+  - The Chef has entered the kitchen.
+  chefDownedQuips:
+  - I... need a minute... in the walk-in...
+  - That's not al dente, that's al pain-te!
+  - Chef down! CHEF DOWN!
+  - Someone call the sous chef...
+  - I'll be back. After a short nap.
+  chefAbilityQuips:
+  - Order up!
+  - Time to bring the heat!
+  - Sauce 'em!
+  - Chef's special, coming right up!
+  - BAM! As a famous chef once said.
+  loadingTips:
+  - Did you know? Penne is the angriest pasta. It's always so penne-trating.
+  - 'Pro tip: Rolling Pins are great for flattening both dough AND your enemies.'
+  - The Pepper Grinder's secret? It really grinds pasta's gears.
+  - 'Tip: Place towers near path curves for maximum pasta punishment.'
+  - 'Fun fact: Rigatoni means ''ridged'' in Italian. Also means ''hard to kill''
+    in this game.'
+  - 'Remember: Every penne counts. Literally. That''s the currency name.'
+  - 'Fusilli fact: Their spiral shape makes them 40% more annoying to hit.'
+  - 'The Colander: straining out problems since... well, since you placed it.'
+  - Did you know spaghetti means 'thin strings'? More like 'thin hit points'.
+  - 'Hot tip: The Blowtorch doesn''t care about armor. Neither should you.'
+  - Loading... just like waiting for water to boil.
+  - 'The Frying Pan: for when you need to flip the script. And the pasta.'
+  - Farfalle thinks it can fly. Prove it wrong.
+  - Your Chef heals between waves. Unlike your ego after losing.
+  - Angel Hair pasta is invisible until close. Just like your dad at the store.
+  pauseMenuQuips:
+  - 'Al Dente-tion: Game Paused'
+  - Taking a breather? The pasta waits for no one. Oh wait, it does. You paused.
+  - Paused. The pasta is judging your bathroom break.
+  - Quick! Think about strategy! Or snacks. Both work.
+  - Game paused. Time to re-assess your noodle strategy.

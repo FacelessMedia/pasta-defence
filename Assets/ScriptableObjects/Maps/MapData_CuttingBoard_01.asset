@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b716e0594ac2d42b780ab8cfac1459, type: 3}
+  m_Name: MapData_CuttingBoard_01
+  m_EditorClassIdentifier: Assembly-CSharp::PastaDefence.Map.MapData
+  mapName: The Cutting Board
+  punSubtitle: Where careers get started... and pasta gets ended.
+  theme: 0
+  worldNumber: 1
+  stageNumber: 1
+  mapPreview: {fileID: 0}
+  startingDough: 120
+  startingServings: 20
+  totalWaves: 10
+  waves:
+  - {fileID: 11400000, guid: ed3b156ba55fdab4a82fc06d0d2b3f87, type: 2}
+  - {fileID: 11400000, guid: fe5077f0c46c17449988975ee9a769c0, type: 2}
+  - {fileID: 11400000, guid: 8b29f6da92151b2409dd2c8cfa755822, type: 2}
+  - {fileID: 11400000, guid: af66fd95916f6614ba9e9d6b6af86354, type: 2}
+  - {fileID: 11400000, guid: c39dfbca5aa037544bc697c5ad74b467, type: 2}
+  - {fileID: 11400000, guid: 485b389f9746c1248905afefcd34a962, type: 2}
+  - {fileID: 11400000, guid: d0e988cba01d1c14ab156b9118c515ce, type: 2}
+  - {fileID: 11400000, guid: fd333f1ee7ced7a4489782ceb76f87f4, type: 2}
+  - {fileID: 11400000, guid: 716693b54334dc34ebe2442324412575, type: 2}
+  - {fileID: 11400000, guid: af73dcdf24f9d6b40ae06f3e1b08579e, type: 2}
+  hasBurnerHazards: 0
+  hasWaterZones: 0
+  hasDarkAreas: 0
+  hasColdZones: 0
+  hasHeatZones: 0
+  enemyHPMultiplier: 1
+  enemySpeedMultiplier: 1
+  requiredStarsToUnlock: 0
+  requiredStageToUnlock: 0
+  twoStarMaxLeaks: 0
+  threeStarBudgetPercent: 0.7

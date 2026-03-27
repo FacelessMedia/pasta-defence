@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9d76d61974e7143bfbfaa7616c05ce, type: 3}
+  m_Name: TowerData_Colander
+  m_EditorClassIdentifier: Assembly-CSharp::PastaDefence.Towers.TowerData
+  towerName: Colander
+  punName: The Strainer
+  towerType: 4
+  icon: {fileID: 0}
+  prefab: {fileID: 819237611366234164, guid: 492e30ca93730dd43b150374aca46e44, type: 3}
+  damage: 3
+  attackSpeed: 0.5
+  range: 2.5
+  cost: 55
+  damageType: 0
+  defaultTargeting: 0
+  canTargetFlying: 0
+  isAreaOfEffect: 0
+  aoeRadius: 0
+  slowAmount: 0
+  slowDuration: 0
+  stunChance: 1
+  stunDuration: 1.5
+  armorReduction: 0
+  dotDamage: 0
+  dotDuration: 0
+  knockbackForce: 0
+  buffDamagePercent: 0
+  buffSpeedPercent: 0
+  buffRange: 0
+  doughPerWave: 0
+  upgradePath: []
+  flavorText: Strains out the riff-raff.
+  placementQuip: Time to strain some noodles!
+  sellQuip: Drained and discarded.

@@ -33,6 +33,7 @@ namespace PastaDefence.EditorTools
             {
                 cam.orthographic = true;
                 cam.orthographicSize = 5.5f;
+                cam.clearFlags = CameraClearFlags.SolidColor;
                 cam.backgroundColor = new Color(0.85f, 0.85f, 0.83f);
                 cam.transform.position = new Vector3(0, 0, -10);
             }
@@ -674,23 +675,59 @@ namespace PastaDefence.EditorTools
         private static Sprite LoadBackgroundSprite()
         {
             // Search for the kitchen countertop background in Assets/Art/
-            string[] guids = AssetDatabase.FindAssets("Cartoon_kitchen_countertop", new[] { "Assets/Art" });
-            if (guids.Length == 0)
+            string[] searchTerms = new[] {
+                "Cartoon_kitchen_countertop",
+                "kitchen_countertop",
+                "countertop",
+                "background"
+            };
+
+            foreach (var term in searchTerms)
             {
-                // Try broader search
-                guids = AssetDatabase.FindAssets("kitchen_countertop", new[] { "Assets/Art" });
-            }
-            if (guids.Length == 0)
-            {
-                // Try finding any background image in Art folder
-                guids = AssetDatabase.FindAssets("t:Sprite", new[] { "Assets/Art" });
+                string[] guids = AssetDatabase.FindAssets(term, new[] { "Assets/Art" });
+                foreach (var guid in guids)
+                {
+                    string path = AssetDatabase.GUIDToAssetPath(guid);
+                    // Skip non-image files
+                    if (!path.EndsWith(".png") && !path.EndsWith(".jpg") && !path.EndsWith(".jpeg") && !path.EndsWith(".tga"))
+                        continue;
+
+                    // Force import as Sprite with high resolution
+                    var importer = AssetImporter.GetAtPath(path) as TextureImporter;
+                    if (importer != null)
+                    {
+                        bool needsReimport = false;
+                        if (importer.textureType != TextureImporterType.Sprite)
+                        {
+                            importer.textureType = TextureImporterType.Sprite;
+                            needsReimport = true;
+                        }
+                        if (importer.maxTextureSize < 4096)
+                        {
+                            importer.maxTextureSize = 4096;
+                            needsReimport = true;
+                        }
+                        if (needsReimport)
+                        {
+                            importer.spritePixelsPerUnit = 100;
+                            importer.SaveAndReimport();
+                        }
+                    }
+
+                    var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+                    if (sprite != null)
+                    {
+                        Debug.Log($"[Pasta Defence] Loaded background: {path}");
+                        return sprite;
+                    }
+                }
             }
 
-            foreach (var guid in guids)
+            // Last resort: find ANY texture in Assets/Art
+            string[] allTexGuids = AssetDatabase.FindAssets("t:Texture2D", new[] { "Assets/Art" });
+            foreach (var guid in allTexGuids)
             {
                 string path = AssetDatabase.GUIDToAssetPath(guid);
-
-                // Make sure import settings are set to Sprite
                 var importer = AssetImporter.GetAtPath(path) as TextureImporter;
                 if (importer != null && importer.textureType != TextureImporterType.Sprite)
                 {
@@ -699,11 +736,10 @@ namespace PastaDefence.EditorTools
                     importer.maxTextureSize = 4096;
                     importer.SaveAndReimport();
                 }
-
                 var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
                 if (sprite != null)
                 {
-                    Debug.Log($"[Pasta Defence] Loaded background: {path}");
+                    Debug.Log($"[Pasta Defence] Loaded background (fallback): {path}");
                     return sprite;
                 }
             }

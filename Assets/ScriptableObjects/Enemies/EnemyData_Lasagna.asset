@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76633b5984611c04097a1d7c63363aaf, type: 3}
+  m_Name: EnemyData_Lasagna
+  m_EditorClassIdentifier: Assembly-CSharp::PastaDefence.Enemies.EnemyData
+  enemyName: Lasagna
+  punName: Lasagna
+  enemyType: 5
+  icon: {fileID: 0}
+  prefab: {fileID: 8934183412085171889, guid: 82a2dc1e7ff73ab4ab4cea5a7e33d875, type: 3}
+  maxHP: 1000
+  speed: 0.8
+  armor: 10
+  doughReward: 100
+  primaryAbility: 3
+  secondaryAbility: 0
+  heatResistance: 0
+  impactResistance: 0
+  sharpResistance: 0
+  seasoningResistance: 0
+  servingsLostOnLeak: 5
+  shieldAmount: 0
+  splitCount: 3
+  splitInto: {fileID: 0}
+  healAmount: 0
+  healInterval: 0
+  dashDistance: 0
+  dashCooldown: 0
+  regenPerSecond: 0
+  speedAuraMultiplier: 1
+  speedAuraRange: 0
+  evasionChance: 0
+  flavorText: The final boss of every Italian dinner.
+  deathQuips:
+  - Pasta la vista, baby.
+  - That's a-more damage than they expected!
+  - Reduced to sauce.

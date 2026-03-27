@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783697222528b854a93a5c44eeccd089, type: 3}
+  m_Name: WaveData_03_CarbLoading
+  m_EditorClassIdentifier: Assembly-CSharp::PastaDefence.Enemies.WaveData
+  waveName: Carb Loading
+  waveQuip: They're carbo-loading for battle!
+  waveNumber: 3
+  enemyGroups:
+  - enemyData: {fileID: 11400000, guid: 8bfeddfd813db07448bd419ae138c0cd, type: 2}
+    count: 15
+    spawnInterval: 0.3
+  bonusDough: 15

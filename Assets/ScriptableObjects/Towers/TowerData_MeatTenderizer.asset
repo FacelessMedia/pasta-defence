@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9d76d61974e7143bfbfaa7616c05ce, type: 3}
+  m_Name: TowerData_MeatTenderizer
+  m_EditorClassIdentifier: Assembly-CSharp::PastaDefence.Towers.TowerData
+  towerName: Meat Tenderizer
+  punName: The Tenderoni
+  towerType: 6
+  icon: {fileID: 0}
+  prefab: {fileID: 8471880932135148859, guid: c74ba6fb6688a2448bffec0c85be132f, type: 3}
+  damage: 18
+  attackSpeed: 0.6
+  range: 1.8
+  cost: 70
+  damageType: 0
+  defaultTargeting: 2
+  canTargetFlying: 0
+  isAreaOfEffect: 0
+  aoeRadius: 0
+  slowAmount: 0.2
+  slowDuration: 0.5
+  stunChance: 0
+  stunDuration: 0
+  armorReduction: 5
+  dotDamage: 0
+  dotDuration: 0
+  knockbackForce: 0
+  buffDamagePercent: 0
+  buffSpeedPercent: 0
+  buffRange: 0
+  doughPerWave: 0
+  upgradePath: []
+  flavorText: Makes everything softer. Especially your enemies.
+  placementQuip: Tenderizing time!
+  sellQuip: This meat is done.

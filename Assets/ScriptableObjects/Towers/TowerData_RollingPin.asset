@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9d76d61974e7143bfbfaa7616c05ce, type: 3}
+  m_Name: TowerData_RollingPin
+  m_EditorClassIdentifier: Assembly-CSharp::PastaDefence.Towers.TowerData
+  towerName: Rolling Pin
+  punName: The Roller Coaster
+  towerType: 0
+  icon: {fileID: 0}
+  prefab: {fileID: 433331964127371935, guid: f4e4adc81433c3c4583d99f5fa7e602e, type: 3}
+  damage: 15
+  attackSpeed: 0.8
+  range: 2
+  cost: 60
+  damageType: 0
+  defaultTargeting: 0
+  canTargetFlying: 0
+  isAreaOfEffect: 1
+  aoeRadius: 1.2
+  slowAmount: 0.3
+  slowDuration: 1.5
+  stunChance: 0.15
+  stunDuration: 0.5
+  armorReduction: 0
+  dotDamage: 0
+  dotDuration: 0
+  knockbackForce: 0
+  buffDamagePercent: 0
+  buffSpeedPercent: 0
+  buffRange: 0
+  doughPerWave: 0
+  upgradePath:
+  - upgradeName: Warmed Up
+    punName: Warmed Up
+    description: +Damage, +Speed
+    cost: 40
+    icon: {fileID: 0}
+    damageBonus: 5
+    attackSpeedBonus: 0.2
+    rangeBonus: 0
+    aoeRadiusBonus: 0
+    slowAmountBonus: 0
+    slowDurationBonus: 0
+    stunChanceBonus: 0
+    dotDamageBonus: 0
+    knockbackForceBonus: 0
+    buffDamagePercentBonus: 0
+    doughPerWaveBonus: 0
+  - upgradeName: On a Roll
+    punName: On a Roll
+    description: +AoE radius, +Slow duration
+    cost: 80
+    icon: {fileID: 0}
+    damageBonus: 0
+    attackSpeedBonus: 0
+    rangeBonus: 0
+    aoeRadiusBonus: 0.5
+    slowAmountBonus: 0
+    slowDurationBonus: 0.5
+    stunChanceBonus: 0
+    dotDamageBonus: 0
+    knockbackForceBonus: 0
+    buffDamagePercentBonus: 0
+    doughPerWaveBonus: 0
+  - upgradeName: Steamroller
+    punName: Steamroller
+    description: Massive AoE, perma-slow, lower damage
+    cost: 150
+    icon: {fileID: 0}
+    damageBonus: -3
+    attackSpeedBonus: 0
+    rangeBonus: 0
+    aoeRadiusBonus: 1
+    slowAmountBonus: 0.3
+    slowDurationBonus: 2
+    stunChanceBonus: 0
+    dotDamageBonus: 0
+    knockbackForceBonus: 0
+    buffDamagePercentBonus: 0
+    doughPerWaveBonus: 0
+  flavorText: Flattens your problems. And your pasta.
+  placementQuip: Time to roll out the welcome mat... of pain.
+  sellQuip: Back in the drawer. Rolling away...

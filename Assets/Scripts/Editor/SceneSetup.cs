@@ -32,35 +32,49 @@ namespace PastaDefence.EditorTools
             if (cam != null)
             {
                 cam.orthographic = true;
-                cam.orthographicSize = 6f;
-                cam.backgroundColor = new Color(0.18f, 0.15f, 0.12f);
+                cam.orthographicSize = 5.5f;
+                cam.backgroundColor = new Color(0.85f, 0.85f, 0.83f);
                 cam.transform.position = new Vector3(0, 0, -10);
             }
 
             // --- Background ---
             var bg = new GameObject("Background");
             var bgSr = bg.AddComponent<SpriteRenderer>();
-            bgSr.color = new Color(0.85f, 0.75f, 0.6f); // Cutting board color
+            // Load the kitchen countertop background image
+            var bgSprite = LoadBackgroundSprite();
+            if (bgSprite != null)
+            {
+                bgSr.sprite = bgSprite;
+                // Scale to fill camera view (ortho size 5.5, 16:9 = ~19.5 x 11 world units)
+                float spriteW = bgSprite.bounds.size.x;
+                float spriteH = bgSprite.bounds.size.y;
+                float targetW = 19.5f;
+                float targetH = 11f;
+                bg.transform.localScale = new Vector3(targetW / spriteW, targetH / spriteH, 1f);
+            }
+            else
+            {
+                bgSr.color = new Color(0.9f, 0.9f, 0.88f); // Fallback counter color
+                bg.transform.localScale = new Vector3(20, 12, 1);
+            }
             bgSr.sortingOrder = -10;
-            bg.transform.localScale = new Vector3(20, 12, 1);
 
             // --- Path ---
             var pathParent = new GameObject("WaypointPath");
             var waypointPath = pathParent.AddComponent<WaypointPath>();
 
-            // Create waypoints for an S-shaped path
+            // Waypoints matching the kitchen countertop background S-path
+            // Path: START (bottom-left) → right → up → right → down → right → up → GOAL (top-right)
             Vector3[] waypointPositions = new Vector3[]
             {
-                new Vector3(-8f, 3f, 0),
-                new Vector3(-4f, 3f, 0),
-                new Vector3(-2f, 1f, 0),
-                new Vector3(2f, 1f, 0),
-                new Vector3(4f, -1f, 0),
-                new Vector3(0f, -1f, 0),
-                new Vector3(-2f, -3f, 0),
-                new Vector3(2f, -3f, 0),
-                new Vector3(6f, -3f, 0),
-                new Vector3(8f, -1f, 0),
+                new Vector3(-8.5f, -4f, 0),   // 0: START bottom-left
+                new Vector3(-4f,   -4f, 0),   // 1: along bottom, heading right
+                new Vector3(-4f,    3.5f, 0),  // 2: up the left side
+                new Vector3( 1f,    3.5f, 0),  // 3: right across the top
+                new Vector3( 1f,   -2f, 0),   // 4: down the center
+                new Vector3( 5f,   -2f, 0),   // 5: right along the middle
+                new Vector3( 5f,    3.5f, 0),  // 6: up the right side
+                new Vector3( 8.5f,  3.5f, 0),  // 7: GOAL top-right
             };
 
             Transform[] waypoints = new Transform[waypointPositions.Length];
@@ -71,11 +85,12 @@ namespace PastaDefence.EditorTools
                 wp.transform.position = waypointPositions[i];
                 waypoints[i] = wp.transform;
 
-                // Visual path marker
-                var wpSr = wp.AddComponent<SpriteRenderer>();
-                wpSr.color = new Color(0.6f, 0.5f, 0.35f, 0.5f);
-                wpSr.sortingOrder = -5;
-                wp.transform.localScale = new Vector3(1.5f, 1.5f, 1f);
+                // Invisible waypoint marker (path is drawn on background image)
+                // Uncomment SpriteRenderer below to debug waypoint positions
+                // var wpSr = wp.AddComponent<SpriteRenderer>();
+                // wpSr.color = new Color(1f, 0f, 0f, 0.5f);
+                // wpSr.sortingOrder = 100;
+                // wp.transform.localScale = new Vector3(0.3f, 0.3f, 1f);
             }
 
             // Wire waypoints array via SerializedObject
@@ -94,12 +109,26 @@ namespace PastaDefence.EditorTools
 
             // --- Tower Placement Spots ---
             var placementsParent = new GameObject("TowerPlacements");
+            // Tower spots placed in open counter grid spaces around the S-path
             Vector3[] placementPositions = new Vector3[]
             {
-                new Vector3(-5f, 1f, 0), new Vector3(-3f, 3.5f, 0), new Vector3(-1f, -0.5f, 0),
-                new Vector3(1f, 3f, 0), new Vector3(3f, -0.5f, 0), new Vector3(3f, 1.5f, 0),
-                new Vector3(-1f, -2f, 0), new Vector3(1f, -4f, 0), new Vector3(4f, -3.5f, 0),
-                new Vector3(5f, -1.5f, 0), new Vector3(-3f, 0.5f, 0), new Vector3(6f, -1f, 0),
+                // Left column (between start path and left vertical)
+                new Vector3(-7f,  -1.5f, 0),
+                new Vector3(-7f,   1.5f, 0),
+                // Inside first S-curve (open area upper-left of center)
+                new Vector3(-2f,   1f, 0),
+                new Vector3(-1f,  -1.5f, 0),
+                new Vector3(-6f,  -2.5f, 0),
+                // Between the two vertical paths (center corridor)
+                new Vector3(-1.5f, -4f, 0),
+                new Vector3( 3f,    1f, 0),
+                new Vector3( 3f,   -0.5f, 0),
+                // Inside second S-curve (open area lower-right)
+                new Vector3( 3f,   -4f, 0),
+                new Vector3( 7f,   -0.5f, 0),
+                // Near goal area
+                new Vector3( 7f,    1.5f, 0),
+                new Vector3( 6.5f, -3.5f, 0),
             };
 
             for (int i = 0; i < placementPositions.Length; i++)
@@ -640,6 +669,47 @@ namespace PastaDefence.EditorTools
             if (parent == null) return null;
             var found = parent.Find(name);
             return found != null ? found.GetComponent<Button>() : null;
+        }
+
+        private static Sprite LoadBackgroundSprite()
+        {
+            // Search for the kitchen countertop background in Assets/Art/
+            string[] guids = AssetDatabase.FindAssets("Cartoon_kitchen_countertop", new[] { "Assets/Art" });
+            if (guids.Length == 0)
+            {
+                // Try broader search
+                guids = AssetDatabase.FindAssets("kitchen_countertop", new[] { "Assets/Art" });
+            }
+            if (guids.Length == 0)
+            {
+                // Try finding any background image in Art folder
+                guids = AssetDatabase.FindAssets("t:Sprite", new[] { "Assets/Art" });
+            }
+
+            foreach (var guid in guids)
+            {
+                string path = AssetDatabase.GUIDToAssetPath(guid);
+
+                // Make sure import settings are set to Sprite
+                var importer = AssetImporter.GetAtPath(path) as TextureImporter;
+                if (importer != null && importer.textureType != TextureImporterType.Sprite)
+                {
+                    importer.textureType = TextureImporterType.Sprite;
+                    importer.spritePixelsPerUnit = 100;
+                    importer.maxTextureSize = 4096;
+                    importer.SaveAndReimport();
+                }
+
+                var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+                if (sprite != null)
+                {
+                    Debug.Log($"[Pasta Defence] Loaded background: {path}");
+                    return sprite;
+                }
+            }
+
+            Debug.LogWarning("[Pasta Defence] No background image found in Assets/Art/. Using fallback color.");
+            return null;
         }
 
         private static void EnsureFolder(string parent, string folderName)

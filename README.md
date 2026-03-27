@@ -4,12 +4,13 @@
 
 A kitchen-themed tower defense game where pasta is the enemy and kitchen utensils are your weapons. Built in Unity (C#), targeting Steam release.
 
-## Setup
+## Setup (3 Steps!)
 
 1. **Install Unity Hub** and Unity Editor (2022.3 LTS or newer recommended)
-2. Open Unity Hub → "Add Project from Disk" → Select this folder
-3. Unity will create the project files around the existing `Assets/` folder
-4. Open `Assets/Scenes/MainMenu` or create a new scene to get started
+2. Open Unity Hub → **"Add Project from Disk"** → Select this folder → Open the project
+3. In Unity, go to the top menu: **Pasta Defence → ONE-CLICK SETUP (Do Everything)**
+
+That's it! The script automatically creates all ScriptableObjects, prefabs, placeholder sprites, scenes, UI, and wires everything together. Hit **Play** to start.
 
 ## Project Structure
 
@@ -32,16 +33,18 @@ Assets/
 └── Scenes/             — Game scenes
 ```
 
-## First Steps After Unity Project Creation
+## Menu Options (All Automated)
 
-1. Create a new Scene (e.g., `Stage_CuttingBoard_01`)
-2. Add empty GameObjects for: `GameManager`, `WaveManager`, `EconomyManager`, `TowerManager`, `ObjectPool`, `PunManager`, `AudioManager`
-3. Attach the corresponding scripts to each
-4. Create ScriptableObject assets for towers, enemies, and waves via `Create > Pasta Defence > ...`
-5. Create a QuipDatabase asset via `Create > Pasta Defence > Quip Database`
-6. Set up a WaypointPath with child Transform waypoints
-7. Create tower/enemy prefabs with sprites and attach the tower/enemy scripts
-8. Build out the UI Canvas referencing the HUD script
+After opening the project in Unity, you'll see a **"Pasta Defence"** menu at the top with these options:
+
+| Menu Item | What It Does |
+|-----------|-------------|
+| **ONE-CLICK SETUP (Do Everything)** | Runs ALL setup steps below in order — this is all you need |
+| Create All Data Assets | Creates 10 tower + 15 enemy + 10 wave + 1 map + 1 quip database ScriptableObjects |
+| Create All Prefabs | Creates 26 prefabs with placeholder sprites, colliders, and scripts attached |
+| Setup Game Scene | Builds the full game scene: camera, path, placements, managers, UI canvas, all wired up |
+| Setup Main Menu Scene | Builds the main menu scene with title, buttons, and random taglines |
+| Add Scenes to Build Settings | Configures build settings so scenes load correctly |
 
 ## Architecture Notes
 
@@ -70,6 +73,8 @@ Assets/
 - [x] Full UI system (HUD, tower info, pause, game over, main menu)
 - [x] Meta-progression scaffolding (SkillTree, RecipeBook, SaveSystem)
 - [x] Audio manager scaffold
-- [ ] Unity scene setup + prefab wiring (requires Unity Editor)
-- [ ] Placeholder art / sprites
+- [x] Automated project setup (ONE-CLICK SETUP creates everything)
+- [x] Auto-generated placeholder sprites for all towers, enemies, and hero
+- [x] Auto-built scenes (MainMenu + Stage_CuttingBoard_01) with full UI
+- [ ] Replace placeholder art with hand-drawn sprites
 - [ ] Playtesting and balance pass

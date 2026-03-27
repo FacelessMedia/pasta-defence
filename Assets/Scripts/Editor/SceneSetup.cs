@@ -41,6 +41,8 @@ namespace PastaDefence.EditorTools
             // --- Background ---
             var bg = new GameObject("Background");
             var bgSr = bg.AddComponent<SpriteRenderer>();
+            bgSr.sortingOrder = -10;
+
             // Load the kitchen countertop background image
             var bgSprite = LoadBackgroundSprite();
             if (bgSprite != null)
@@ -52,13 +54,21 @@ namespace PastaDefence.EditorTools
                 float targetW = 19.5f;
                 float targetH = 11f;
                 bg.transform.localScale = new Vector3(targetW / spriteW, targetH / spriteH, 1f);
+                Debug.Log($"[Pasta Defence] Background scaled: {bg.transform.localScale}");
             }
             else
             {
-                bgSr.color = new Color(0.9f, 0.9f, 0.88f); // Fallback counter color
-                bg.transform.localScale = new Vector3(20, 12, 1);
+                // Fallback: create a solid white sprite so SpriteRenderer can render something
+                var fallbackTex = new Texture2D(4, 4);
+                Color[] pixels = new Color[16];
+                for (int p = 0; p < 16; p++) pixels[p] = Color.white;
+                fallbackTex.SetPixels(pixels);
+                fallbackTex.Apply();
+                bgSr.sprite = Sprite.Create(fallbackTex, new Rect(0, 0, 4, 4), new Vector2(0.5f, 0.5f), 1f);
+                bgSr.color = new Color(0.9f, 0.88f, 0.82f); // Warm counter color
+                bg.transform.localScale = new Vector3(5f, 3f, 1f);
+                Debug.LogWarning("[Pasta Defence] Using fallback background. Drag your image onto the Background object's Sprite field.");
             }
-            bgSr.sortingOrder = -10;
 
             // --- Path ---
             var pathParent = new GameObject("WaypointPath");
@@ -686,6 +696,8 @@ namespace PastaDefence.EditorTools
                 importer.maxTextureSize = 4096;
                 importer.filterMode = FilterMode.Bilinear;
                 importer.SaveAndReimport();
+                AssetDatabase.Refresh();
+                AssetDatabase.ImportAsset(bgPath, ImportAssetOptions.ForceUpdate);
                 Debug.Log($"[Pasta Defence] Reimported background as Sprite: {bgPath}");
             }
             else
